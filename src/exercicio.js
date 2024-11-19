@@ -6,15 +6,11 @@ const alunos=[              //Aqui já é um array
 ];
 
 function passou_de_ano(alunos){
-    for(let i=0; i<alunos.length;i++){
-        if(alunos[i].nota>=6){
-            console.log(`${alunos[i].nome} passou de ano`);
-        }
-        else{
-            console.log(`${alunos[i].nome} não passou de ano`);
-        }
-    } 
-    
+    const alunosAprovados=alunos.filter(aluno=>aluno.nota >=6);
+    alunosAprovados.forEach(aluno => console.log(`${aluno.nome} passou de ano`));
+
+    const alunosReprovados=alunos.filter(aluno => aluno.nota < 6);
+    alunosReprovados.forEach(aluno => console.log(`${aluno.nome} não passou de ano`));
 }
 
 passou_de_ano(alunos);
